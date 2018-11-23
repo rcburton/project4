@@ -32,7 +32,7 @@ public class Parser {
                 parsedData[0] = temp;
                 // AirObject type
                 temp2 = sc.next().trim();
-                parsedData[1] = sc.next().trim();
+                parsedData[1] = temp2;
                 // Name
                 parsedData[2] = sc.next().trim();
                 // X
