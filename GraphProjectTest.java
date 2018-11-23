@@ -11,13 +11,12 @@ public class GraphProjectTest extends TestCase {
     public void setUp() {
         // Nothing Here
     }
-    
+
+
     /**
      * Get code coverage of the class declaration.
      */
     public void testGInit() {
         GraphProject gph = new GraphProject();
-        assertNotNull(gph);
-        GraphProject.main(null);
     }
 }

@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * {Project Description Here}
  */
@@ -32,9 +36,32 @@
 public class GraphProject {
     /**
      * @param args
-     *     Command line parameters
+     *            Command line parameters
      */
     public static void main(String[] args) {
-        // This is the main file for the program.
+        Parser p = new Parser();
+        // String fileName = args[1];
+        String fileName = "P4SampleInput.txt";
+        String pLine = "";
+        Handler handler = new Handler();
+
+        String[] parsedData = new String[12];
+        try {
+
+            Scanner scf = new Scanner(new File(fileName));
+
+            while (scf.hasNextLine()) {
+                pLine = scf.nextLine();
+                parsedData = p.parseLine(pLine);
+                handler.handleCommands(parsedData);
+
+            }
+            scf.close();
+
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("no input found");
+            e.printStackTrace();
+        }
     }
 }

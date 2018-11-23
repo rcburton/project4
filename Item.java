@@ -11,6 +11,7 @@ public class Item {
     private double trajectory;
     private String brand;
     private int number;
+    private String name;
 
 
     public Item(String[] parsedData) {
@@ -18,6 +19,7 @@ public class Item {
             parsedData[3]), Integer.parseInt(parsedData[4]), Integer.parseInt(
                 parsedData[5]), Integer.parseInt(parsedData[6]), Integer
                     .parseInt(parsedData[7]), Integer.parseInt(parsedData[8]));
+        this.name = parsedData[2];
         if (parsedData[1].equals("balloon")) {
             this.aoType = parsedData[1];
             this.type = parsedData[9];
@@ -28,19 +30,19 @@ public class Item {
             this.carrier = parsedData[9];
             this.flightNum = Integer.parseInt(parsedData[10]);
             this.engineNum = Integer.parseInt(parsedData[11]);
-            
+
         }
         else if (parsedData[1].equals("rocket")) {
             this.aoType = parsedData[1];
             this.ascendRate = Integer.parseInt(parsedData[9]);
             this.trajectory = Double.parseDouble(parsedData[10]);
-            
+
         }
         else if (parsedData[1].equals("drone")) {
             this.aoType = parsedData[1];
             this.brand = parsedData[9];
             this.engineNum = Integer.parseInt(parsedData[10]);
-            
+
         }
         else if (parsedData[1].equals("bird")) {
             this.aoType = parsedData[1];
@@ -53,6 +55,11 @@ public class Item {
 
     public AirObject getAirObj() {
         return this.airObj;
+    }
+
+
+    public String getName() {
+        return this.name;
     }
 
 
