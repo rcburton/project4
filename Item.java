@@ -107,4 +107,14 @@ public class Item {
         return this.number;
     }
 
+    public String toString() {
+        //implement toString
+        return null;
+        //Airplane Air2 100 1010 101 924 2 900 Delta 17 2
+       // Balloon B1 10 11 11 21 12 31 hot_air 15
+        //Rocket Enterprise 0 100 20 10 50 50 5000 99.29
+        //Bird pterodactyl 0 100 20 10 50 50 Dinosaur 1
+        //
+    }
+
 }

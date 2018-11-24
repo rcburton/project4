@@ -11,6 +11,7 @@ public class Handler {
         if (parsedData[0].equals("add")) {
             Item newItem = new Item(parsedData);
             // search for duplicates
+
             // if no duplicates and is valid, add to SkipList and Bintree
 
         }

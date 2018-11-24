@@ -40,11 +40,10 @@ public class GraphProject {
      */
     public static void main(String[] args) {
         Parser p = new Parser();
-        // String fileName = args[1];
-        String fileName = "P4SampleInput.txt";
+        String fileName = args[0];
         String pLine = "";
         Handler handler = new Handler();
-
+        System.out.println("innit");
         String[] parsedData = new String[12];
         try {
 
