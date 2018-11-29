@@ -1,4 +1,9 @@
-
+/**
+ * The class containing the Item.
+ *
+ * @author Ryan Burton and Sayan Ray
+ * @version 11/25/18
+ */
 public class Item {
 
     private AirObject airObj;
@@ -14,6 +19,12 @@ public class Item {
     private String name;
 
 
+    /**
+     * Constructor
+     * 
+     * @param parsedData
+     *            The parsed data used to construct the Item
+     */
     public Item(String[] parsedData) {
         this.airObj = new AirObject(parsedData[2], Integer.parseInt(
             parsedData[3]), Integer.parseInt(parsedData[4]), Integer.parseInt(
@@ -53,68 +64,197 @@ public class Item {
     }
 
 
+    /**
+     * Getter for the AirObject
+     * 
+     * @return
+     *         The AirObject
+     */
     public AirObject getAirObj() {
         return this.airObj;
     }
 
 
+    /**
+     * Getter for the Name
+     * 
+     * @return
+     *         The Name
+     */
     public String getName() {
         return this.name;
     }
 
 
+    /**
+     * Getter for the AirObject type
+     * 
+     * @return
+     *         The AOType
+     */
     public String getAOType() {
         return this.aoType;
     }
 
 
+    /**
+     * Getter for the type
+     * 
+     * @return
+     *         The type
+     */
     public String getType() {
         return this.type;
     }
 
 
+    /**
+     * Getter for the ascend rate
+     * 
+     * @return
+     *         The Ascend Rate
+     */
     public int getAscendRate() {
         return this.ascendRate;
     }
 
 
+    /**
+     * Getter for the carrier
+     * 
+     * @return
+     *         The carrier
+     */
     public String getCarrier() {
         return this.carrier;
     }
 
 
+    /**
+     * Getter for the flight number
+     * 
+     * @return
+     *         The flight number
+     */
     public int getFlightNum() {
         return this.flightNum;
     }
 
 
+    /**
+     * Getter for the engine number
+     * 
+     * @return
+     *         The engine number
+     */
     public int getEngineNum() {
         return this.engineNum;
     }
 
 
+    /**
+     * Getter for the trajectory
+     * 
+     * @return
+     *         The trajectory
+     */
     public double getTrajectory() {
         return this.trajectory;
     }
 
 
+    /**
+     * Getter for the brand
+     * 
+     * @return
+     *         The brand
+     */
     public String getBrand() {
         return this.brand;
     }
 
 
+    /**
+     * Getter for the number
+     * 
+     * @return
+     *         The number
+     */
     public int getNumber() {
         return this.number;
     }
 
+
+    /**
+     * Outputs the Item as a String
+     * 
+     * @return
+     *         The String
+     */
     public String toString() {
-        //implement toString
-        return null;
-        //Airplane Air2 100 1010 101 924 2 900 Delta 17 2
-       // Balloon B1 10 11 11 21 12 31 hot_air 15
-        //Rocket Enterprise 0 100 20 10 50 50 5000 99.29
-        //Bird pterodactyl 0 100 20 10 50 50 Dinosaur 1
-        //
+        String outStr = "";
+        // implement toString
+        if (this.getAOType().equals("balloon")) {
+            outStr = "Balloon " + this.getName() + " " + Integer.toString(this
+                .getAirObj().getXorig()) + " " + Integer.toString(this
+                    .getAirObj().getYorig()) + " " + Integer.toString(this
+                        .getAirObj().getZorig()) + " " + Integer.toString(this
+                            .getAirObj().getXwidth()) + " " + Integer.toString(
+                                this.getAirObj().getYwidth()) + " " + Integer
+                                    .toString(this.getAirObj().getZwidth())
+                + " " + this.getType() + " " + Integer.toString(this
+                    .getAscendRate());
+        }
+        else if (this.getAOType().equals("airplane")) {
+            outStr = "Airplane " + this.getName() + " " + Integer.toString(this
+                .getAirObj().getXorig()) + " " + Integer.toString(this
+                    .getAirObj().getYorig()) + " " + Integer.toString(this
+                        .getAirObj().getZorig()) + " " + Integer.toString(this
+                            .getAirObj().getXwidth()) + " " + Integer.toString(
+                                this.getAirObj().getYwidth()) + " " + Integer
+                                    .toString(this.getAirObj().getZwidth())
+                + " " + this.getCarrier() + " " + Integer.toString(this
+                    .getFlightNum()) + " " + Integer.toString(this
+                        .getEngineNum());
+
+        }
+        else if (this.getAOType().equals("rocket")) {
+            outStr = "Rocket " + this.getName() + " " + Integer.toString(this
+                .getAirObj().getXorig()) + " " + Integer.toString(this
+                    .getAirObj().getYorig()) + " " + Integer.toString(this
+                        .getAirObj().getZorig()) + " " + Integer.toString(this
+                            .getAirObj().getXwidth()) + " " + Integer.toString(
+                                this.getAirObj().getYwidth()) + " " + Integer
+                                    .toString(this.getAirObj().getZwidth())
+                + " " + Integer.toString(this.getAscendRate()) + " " + Double
+                    .toString(this.getTrajectory());
+
+        }
+        else if (this.getAOType().equals("drone")) {
+            outStr = "Drone " + this.getName() + " " + Integer.toString(this
+                .getAirObj().getXorig()) + " " + Integer.toString(this
+                    .getAirObj().getYorig()) + " " + Integer.toString(this
+                        .getAirObj().getZorig()) + " " + Integer.toString(this
+                            .getAirObj().getXwidth()) + " " + Integer.toString(
+                                this.getAirObj().getYwidth()) + " " + Integer
+                                    .toString(this.getAirObj().getZwidth())
+                + " " + this.getBrand() + " " + Integer.toString(this
+                    .getEngineNum());
+
+        }
+        else if (this.getAOType().equals("bird")) {
+            outStr = "Bird " + this.getName() + " " + Integer.toString(this
+                .getAirObj().getXorig()) + " " + Integer.toString(this
+                    .getAirObj().getYorig()) + " " + Integer.toString(this
+                        .getAirObj().getZorig()) + " " + Integer.toString(this
+                            .getAirObj().getXwidth()) + " " + Integer.toString(
+                                this.getAirObj().getYwidth()) + " " + Integer
+                                    .toString(this.getAirObj().getZwidth())
+                + " " + this.getType() + " " + Integer.toString(this
+                    .getNumber());
+
+        }
+        return outStr;
     }
 
 }

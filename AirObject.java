@@ -1,10 +1,8 @@
 /**
- * 
- */
-
-/**
- * @author Ryan
+ * The class containing the AirObjects.
  *
+ * @author Ryan Burton and Sayan Ray
+ * @version 11/25/18
  */
 public class AirObject {
 
@@ -17,11 +15,24 @@ public class AirObject {
     private String name;
 
 
-    public AirObject() {
-
-    }
-
-
+    /**
+     * Constructor
+     * 
+     * @param name
+     *            AirObject name
+     * @param x
+     *            X coordinate
+     * @param y
+     *            Y coordinate
+     * @param z
+     *            Z coordinate
+     * @param xWidth
+     *            X width
+     * @param yWidth
+     *            Y width
+     * @param zWidth
+     *            Z width
+     */
     public AirObject(
         String name,
         int x,
@@ -40,36 +51,78 @@ public class AirObject {
     }
 
 
+    /**
+     * Getter for X coordinate
+     * 
+     * @return
+     *         X coordinate
+     */
     public int getXorig() {
         return this.xOrigin;
     }
 
 
+    /**
+     * Getter for Y coordinate
+     * 
+     * @return
+     *         Y coordinate
+     */
     public int getYorig() {
         return this.yOrigin;
     }
 
 
+    /**
+     * Getter for Z coordinate
+     * 
+     * @return
+     *         Z coordinate
+     */
     public int getZorig() {
         return this.zOrigin;
     }
 
 
+    /**
+     * Getter for X width
+     * 
+     * @return
+     *         X width
+     */
     public int getXwidth() {
         return this.xWidth;
     }
 
 
+    /**
+     * Getter for Y width
+     * 
+     * @return
+     *         Y width
+     */
     public int getYwidth() {
         return this.yWidth;
     }
 
 
+    /**
+     * Getter for Z width
+     * 
+     * @return
+     *         Z width
+     */
     public int getZwidth() {
         return this.zWidth;
     }
 
 
+    /**
+     * Getter for name
+     * 
+     * @return
+     *         name
+     */
     public String getName() {
         return this.name;
     }

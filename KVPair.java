@@ -6,10 +6,9 @@
  * @author sayanray
  * @version Nov 23, 2018
  */
-public class KVPair
-{
+public class KVPair {
     private Comparable key;
-    private Object     value;
+    private Object value;
 
 
     // ----------------------------------------------------------
@@ -17,10 +16,11 @@ public class KVPair
      * Create a new KVPair object.
      *
      * @param key
+     *            The key of the KVPair
      * @param elem
+     *            The value of the KVPair
      */
-    public KVPair(Comparable key, Object elem)
-    {
+    public KVPair(Comparable key, Object elem) {
         this.key = key;
         this.value = elem;
     }
@@ -28,12 +28,12 @@ public class KVPair
 
     // ----------------------------------------------------------
     /**
-     * Place a description of your method here.
+     * Getter for the Value
      *
      * @return
+     *         The value
      */
-    public Object value()
-    {
+    public Object getValue() {
         return this.value;
     }
     // ~ Fields ................................................................
@@ -41,14 +41,13 @@ public class KVPair
 
     // ----------------------------------------------------------
     /**
-     * Place a description of your method here.
+     * Getter for the key
      *
      * @return
+     *         The key
      */
-    public Comparable key()
-    {
+    public Comparable getKey() {
         return this.key;
     }
-
 
 }

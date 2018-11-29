@@ -1,11 +1,21 @@
 import student.TestCase;
-
+/**
+ * The class containing the ParserTest.
+ *
+ * @author Ryan Burton and Sayan Ray
+ * @version 11/25/18
+ */
 public class ParserTest extends TestCase {
+    /**
+     * Sets up the tests that follow. In general, used for initialization
+     */
     public void setUp() {
         // Nothing to set up
     }
 
-
+    /**
+     * Tests the parseLine() function
+     */
     public void testParseLine() {
         Parser p = new Parser();
 
@@ -22,6 +32,8 @@ public class ParserTest extends TestCase {
         String testRangeprint = "rangeprint 1 2";
         String testCollisions = "collisions";
         String testIntersect = "intersect 1 2 3 4 5 6";
+        
+        
 
         String[] balloon = p.parseLine(testBalloon);
         String[] airplane = p.parseLine(testAirplane);
@@ -35,7 +47,7 @@ public class ParserTest extends TestCase {
         String[] rangeprint = p.parseLine(testRangeprint);
         String[] collisions = p.parseLine(testCollisions);
         String[] intersect = p.parseLine(testIntersect);
-
+        
         assertEquals("add", balloon[0]);
         assertEquals("balloon", balloon[1]);
         assertEquals("ba1", balloon[2]);

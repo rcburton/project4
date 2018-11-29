@@ -1,13 +1,30 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * The class containing the Parser.
+ *
+ * @author Ryan Burton and Sayan Ray
+ * @version 11/25/18
+ */
 public class Parser {
 
+    /**
+     * Constructor
+     */
     public Parser() {
         // Empty
     }
 
 
+    /**
+     * Parses the line
+     * 
+     * @param line
+     *            The line to be parsed
+     * @return
+     *         The parsed array
+     */
     public String[] parseLine(String line) {
         String[] parsedData = new String[12];
         parsedData[0] = "";
@@ -24,7 +41,8 @@ public class Parser {
         parsedData[11] = "";
 
         Scanner sc = new Scanner(line);
-        String temp, temp2;
+        String temp;
+        String temp2;
         if (sc.hasNext()) {
             temp = sc.next().trim();
             if (temp.equals("add")) {
@@ -130,6 +148,8 @@ public class Parser {
 
             }
             else {
+                sc.close();
+                return parsedData;
 
             }
         }
