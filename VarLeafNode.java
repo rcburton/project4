@@ -10,8 +10,30 @@
 public class VarLeafNode implements VarBinNode
 {
     private Item val;
+    private int lf;
     public VarLeafNode(Item obj) {
+        this.lf = 0;
         this.val = obj;
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Get the current value of val.
+     * @return The value of val for this object.
+     */
+    public Item getItem()
+    {
+        return val;
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Set the value of val for this object.
+     * @param val The new value for val.
+     */
+    public void setItem(Item val)
+    {
+        this.val = val;
     }
 
     // ----------------------------------------------------------
@@ -21,14 +43,32 @@ public class VarLeafNode implements VarBinNode
     @Override
     public boolean isLeaf()
     {
-        // TODO Auto-generated method stub
+        if(lf == 0) {
         return true;
+        }
+        return false;
     }
 
-    public Item getItem() {
-        return val;
-
+    // ----------------------------------------------------------
+    /**
+     * Get the current value of lf.
+     * @return The value of lf for this object.
+     */
+    public int getLf()
+    {
+        return lf;
     }
+
+    // ----------------------------------------------------------
+    /**
+     * Set the value of lf for this object.
+     * @param lf The new value for lf.
+     */
+    public void setLf(int lf)
+    {
+        this.lf = lf;
+    }
+
 
 
 

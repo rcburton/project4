@@ -1,22 +1,29 @@
 // -------------------------------------------------------------------------
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * Write a one-sentence summary of your class here. Follow it with additional
+ * details about its purpose, what abstraction it represents, and how to use it.
  *
- *  @author sayanray
- *  @version Nov 29, 2018
+ * @author sayanray
+ * @version Nov 29, 2018
  */
-public class VarFlyWeight implements VarBinNode
+public class VarFlyWeight
+    implements VarBinNode
 {
-    private static final VarFlyWeight flyweight = new VarFlyWeight();
-    private VarFlyWeight() {
-        //nothing to do
+    private int                 flyLeaf;
+    private static VarFlyWeight flyweight = new VarFlyWeight();
+
+
+    private VarFlyWeight()
+    {
+        flyLeaf = 0;
     }
 
-    public static VarFlyWeight getInstance() {
+
+    public static VarFlyWeight getInstance()
+    {
         return flyweight;
     }
+
 
     // ----------------------------------------------------------
     /**
@@ -25,13 +32,29 @@ public class VarFlyWeight implements VarBinNode
     @Override
     public boolean isLeaf()
     {
-        // TODO Auto-generated method stub
+        if (flyLeaf == 1)
+        {
+            return true;
+        }
         return false;
     }
-    //~ Fields ................................................................
+    // ~ Fields ................................................................
 
-    //~ Constructors ..........................................................
 
-    //~Public  Methods ........................................................
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     *
+     * @param item
+     */
+    public void turnLeaf()
+    {
+        flyLeaf = 1;
+
+    }
+
+    // ~ Constructors ..........................................................
+
+    // ~Public Methods ........................................................
 
 }
