@@ -41,9 +41,11 @@ public class BinTree
         }
         if (x.isLeaf())
         {
+            Item temp = ((VarLeafNode)x).getItem();
             ((VarLeafNode)x).setLf(1); //turn into internal node
             ((VarIntlNode)x).setLeft(VarFlyWeight.getInstance());
             ((VarIntlNode)x).setRight(VarFlyWeight.getInstance());
+            insertHelp(temp, x, xbox, level);
             insertHelp(item, x, xbox, level);
 
         }
