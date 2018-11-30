@@ -9,13 +9,13 @@
 public class BinTree
 {
     private VarBinNode root;
-    private Box        world;
 
 
-    public BinTree(Box b1)
+
+    public BinTree()
     {
         root = VarFlyWeight.getInstance();
-        this.world = b1;
+
     }
 
 
@@ -106,28 +106,5 @@ public class BinTree
     }
 
 
-// ----------------------------------------------------------
-    /**
-     * Get the current value of world.
-     *
-     * @return The value of world for this object.
-     */
-    public Box getWorld()
-    {
-        return world;
-    }
-
-
-// ----------------------------------------------------------
-    /**
-     * Set the value of world for this object.
-     *
-     * @param world
-     *            The new value for world.
-     */
-    public void setWorld(Box world)
-    {
-        this.world = world;
-    }
 
 }
