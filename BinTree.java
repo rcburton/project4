@@ -21,7 +21,7 @@ public class BinTree
 
 
 
-    private VarBinNode insert(Item item)
+    public VarBinNode insert(Item item)
     {
         Box b = new Box(1024, 0, 1024, 0, 1024, 0);
         return insertHelp(item, root, b, 0);
@@ -36,18 +36,12 @@ public class BinTree
         {
 
             ((VarFlyWeight)x).turnLeaf(); //turn into leaf
-            ((VarLeafNode)x).insert(item);
+            ((VarLeafNode)x).insert(item, x);
             return x;
         }
         if (x.isLeaf())
         {
-//            Item temp = ((VarLeafNode)x).getItem();
-//            ((VarLeafNode)x).setLf(1); //turn into internal node
-//            ((VarIntlNode)x).setLeft(VarFlyWeight.getInstance());
-//            ((VarIntlNode)x).setRight(VarFlyWeight.getInstance());
-//            insertHelp(temp, x, xbox, level);
-//            insertHelp(item, x, xbox, level);
-
+            ((VarLeafNode)x).insert(item, x);
         }
         else
         {
