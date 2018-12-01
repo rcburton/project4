@@ -77,40 +77,35 @@ public class VarLeafNode
 
     public void insert(Item tem)
     {
-        if (size >= 3 && isSplitNeeded(tem)) {
-            //split and reinsert
-        }
-        else {
-            //just add item at val[size]
-        }
+        // have a for loop to check intersection of tem with all the items
+//        if (size >= 3 && isSplitNeeded(tem)) {
+//            //split and reinsert
+//        }
+//        else {
+//            //just add item at val[size]
+//        }
 
     }
 
 
-    public boolean isSplitNeeded(Item temp)
+    public boolean isSplitNeeded(Item item1, Item item2)
     {
         boolean intersect = false;
         boolean xIntersect = false;
         boolean yIntersect = false;
         boolean zIntersect = false;
-        for (int i = 0; i < size; i++)
-        {
-
-            Item i1 = val[i];
-
-            Item j1 = temp;
-            Item a;
-            Item b;
+       Item a;
+       Item b;
             // calculate intersection box
-            if (i1.getAirObj().getXorig() < j1.getAirObj().getXorig())
+            if (item1.getAirObj().getXorig() < item2.getAirObj().getXorig())
             {
-                a = j1;
-                b = i1;
+                a = item2;
+                b = item1;
             }
             else
             {
-                a = i1;
-                b = j1;
+                a = item1;
+                b = item2;
             }
 
             if ((a.getAirObj().getXorig() + a.getAirObj().getXwidth()
@@ -119,61 +114,48 @@ public class VarLeafNode
             {
                 xIntersect = true;
             }
-
-            if (i1.getAirObj().getYorig() < j1.getAirObj().getYorig())
+            //////////////////////////////////
+            if (item1.getAirObj().getZorig() < item2.getAirObj().getZorig())
             {
-
-                // calculate intersection box
-                if (i1.getAirObj().getYorig() < j1.getAirObj().getYorig())
-                {
-                    a = j1;
-                    b = i1;
-                }
-                else
-                {
-                    a = i1;
-                    b = j1;
-                }
-                if ((a.getAirObj().getYorig() + a.getAirObj().getYwidth()
-                    - b.getAirObj().getYorig()) <= (a.getAirObj().getYwidth()
-                        + b.getAirObj().getYwidth()))
-                {
-                    yIntersect = true;
-                }
+                a = item2;
+                b = item1;
             }
-            if (i1.getAirObj().getZorig() < j1.getAirObj().getZorig())
+            else
             {
-
-                // calculate intersection box
-                if (i1.getAirObj().getZorig() < j1.getAirObj().getZorig())
-                {
-                    a = j1;
-                    b = i1;
-                }
-                else
-                {
-                    a = i1;
-                    b = j1;
-                }
-                if ((a.getAirObj().getZorig() + a.getAirObj().getZwidth()
-                    - b.getAirObj().getZorig()) <= (a.getAirObj().getZwidth()
-                        + b.getAirObj().getZwidth()))
-                {
-                    zIntersect = true;
-                }
+                a = item1;
+                b = item2;
             }
+
+            if ((a.getAirObj().getZorig() + a.getAirObj().getZwidth()
+                - b.getAirObj().getZorig()) <= (a.getAirObj().getZwidth()
+                    + b.getAirObj().getZwidth()))
+            {
+                zIntersect = true;
+            }
+            //////////////////////////////
+            if (item1.getAirObj().getYorig() < item2.getAirObj().getYorig())
+            {
+                a = item2;
+                b = item1;
+            }
+            else
+            {
+                a = item1;
+                b = item2;
+            }
+
+            if ((a.getAirObj().getYorig() + a.getAirObj().getYwidth()
+                - b.getAirObj().getYorig()) <= (a.getAirObj().getYwidth()
+                    + b.getAirObj().getYwidth()))
+            {
+                yIntersect = true;
+            }
+
 
             intersect = (xIntersect || yIntersect || zIntersect);
-            if (!intersect)
-            {
-                break;
-            }
-            intersect = false;
-            xIntersect = false;
-            yIntersect = false;
-            zIntersect = false;
-        }
 
-        return !intersect;
+
+
+        return intersect;
     }
 }
