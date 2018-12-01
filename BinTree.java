@@ -36,17 +36,17 @@ public class BinTree
         {
 
             ((VarFlyWeight)x).turnLeaf(); //turn into leaf
-            ((VarLeafNode)x).setItem(item);
+            ((VarLeafNode)x).insert(item);
             return x;
         }
         if (x.isLeaf())
         {
-            Item temp = ((VarLeafNode)x).getItem();
-            ((VarLeafNode)x).setLf(1); //turn into internal node
-            ((VarIntlNode)x).setLeft(VarFlyWeight.getInstance());
-            ((VarIntlNode)x).setRight(VarFlyWeight.getInstance());
-            insertHelp(temp, x, xbox, level);
-            insertHelp(item, x, xbox, level);
+//            Item temp = ((VarLeafNode)x).getItem();
+//            ((VarLeafNode)x).setLf(1); //turn into internal node
+//            ((VarIntlNode)x).setLeft(VarFlyWeight.getInstance());
+//            ((VarIntlNode)x).setRight(VarFlyWeight.getInstance());
+//            insertHelp(temp, x, xbox, level);
+//            insertHelp(item, x, xbox, level);
 
         }
         else
