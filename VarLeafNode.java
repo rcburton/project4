@@ -77,6 +77,14 @@ public class VarLeafNode
 
     public void insert(Item tem)
     {
+        int length = this.getItem().length;
+        boolean split = false;
+        for (int i = 0; i < length; i++) {
+            split = this.doesIntersect(this.getItem()[i], tem);
+            if (split) {
+                i = length;
+            }
+        }
         // have a for loop to check intersection of tem with all the items
 //        if (size >= 3 && isSplitNeeded(tem)) {
 //            //split and reinsert
@@ -88,7 +96,7 @@ public class VarLeafNode
     }
 
 
-    public boolean isSplitNeeded(Item item1, Item item2)
+    public boolean doesIntersect(Item item1, Item item2)
     {
         boolean intersect = false;
         boolean xIntersect = false;
