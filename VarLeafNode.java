@@ -15,7 +15,7 @@ public class VarLeafNode implements VarBinNode {
 
     /**
      * Constructor
-     * 
+     *
      * @param b1
      *            box for the new leaf
      */
@@ -71,8 +71,12 @@ public class VarLeafNode implements VarBinNode {
 
 
     /**
-     * Inserts an object related to the leaf
-     * 
+     * Inserts the item object to the leaf node if
+     * it intersects with all the other items present
+     * in the leaf node. If not, it turns the leafNode
+     * into an internal node and re-inserts all the objects
+     * formerly present in the leaf node plus the new item
+     *
      * @param tem
      *            object being inserted
      * @param x
@@ -109,13 +113,7 @@ public class VarLeafNode implements VarBinNode {
             size++;
         }
         return null;
-        // have a for loop to check intersection of tem with all the items
-// if (size >= 3 && isSplitNeeded(tem)) {
-// //split and reinsert
-// }
-// else {
-// //just add item at val[size]
-// }
+
 
     }
 
@@ -190,7 +188,7 @@ public class VarLeafNode implements VarBinNode {
 
 
     /**
-     * Checks if items intersect
+     * Checks if two items intersect
      * @param item1
      * first item
      * @param item2

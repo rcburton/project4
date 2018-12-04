@@ -22,7 +22,7 @@ public class VarFlyWeight
 
 
     /**
-     * Returns the VarFlyWeight
+     * Returns an instance of VarFlyWeight
      * @return
      * the VarFlyWeight
      */
@@ -45,7 +45,7 @@ public class VarFlyWeight
 
 
     // ----------------------------------------------------------
-   
+
     /**
      * Converts and object to a VarFlyWeight
      */

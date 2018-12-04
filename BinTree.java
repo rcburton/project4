@@ -20,7 +20,7 @@ public class BinTree {
 
     /**
      * Insert function for the BinTree
-     * 
+     *
      * @param item
      *            item being inserted
      * @return
@@ -35,7 +35,12 @@ public class BinTree {
 
     /**
      * Assists with the BinTree insert
-     * 
+     * Adds the item to a flyweight if it hits one during recursion
+     * and returns the node . If it encounters a leafNode then it calls
+     * leafNode's insert and if it is an internal node it splits the current box
+     * and checks which box contains the item's coordinates and calls the recursive
+     * insertHelp accordingly
+     *
      * @param item
      *            Item being inserted
      * @param x
@@ -79,7 +84,8 @@ public class BinTree {
 
     /**
      * Assists searching for items in the BinTree
-     * 
+     * Checks if the co-ordinates of the item is is contained
+     * in the box
      * @param item
      *            The item being searched for
      * @param b
