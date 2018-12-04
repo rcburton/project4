@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------
 /**
- * Write a one-sentence summary of your class here. Follow it with additional
- * details about its purpose, what abstraction it represents, and how to use it.
+ * VarFlyWeight class
  *
  * @author sayanray
  * @version Nov 29, 2018
@@ -13,12 +12,20 @@ public class VarFlyWeight
     private static VarFlyWeight flyweight = new VarFlyWeight();
 
 
+    /**
+     * Constructor
+     */
     private VarFlyWeight()
     {
         flyLeaf = 0;
     }
 
 
+    /**
+     * Returns the VarFlyWeight
+     * @return
+     * the VarFlyWeight
+     */
     public static VarFlyWeight getInstance()
     {
         return flyweight;
@@ -32,20 +39,15 @@ public class VarFlyWeight
     @Override
     public boolean isLeaf()
     {
-        if (flyLeaf == 1)
-        {
-            return true;
-        }
-        return false;
+        return (flyLeaf == 1);
     }
     // ~ Fields ................................................................
 
 
     // ----------------------------------------------------------
+   
     /**
-     * Place a description of your method here.
-     *
-     * @param item
+     * Converts and object to a VarFlyWeight
      */
     public void turnLeaf()
     {

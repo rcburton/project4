@@ -1,58 +1,74 @@
 // -------------------------------------------------------------------------
 /**
- * Write a one-sentence summary of your class here. Follow it with additional
- * details about its purpose, what abstraction it represents, and how to use it.
+ * BinTree for the AirControl
  *
  * @author sayanray
  * @version Nov 29, 2018
  */
-public class BinTree
-{
+public class BinTree {
     private VarBinNode root;
 
 
-
-    public BinTree()
-    {
+    /**
+     * BinTree constructor
+     */
+    public BinTree() {
         root = VarFlyWeight.getInstance();
 
     }
 
 
-
-
-    public VarBinNode insert(Item item)
-    {
+    /**
+     * Insert function for the BinTree
+     * 
+     * @param item
+     *            item being inserted
+     * @return
+     *         the inserted VarBinNode item
+     */
+    public VarBinNode insert(Item item) {
         Box b = new Box(1024, 0, 1024, 0, 1024, 0);
         return insertHelp(item, root, b, 0);
 
     }
 
 
-    private VarBinNode insertHelp(Item item, VarBinNode x, Box xbox, int level)
-    {
+    /**
+     * Assists with the BinTree insert
+     * 
+     * @param item
+     *            Item being inserted
+     * @param x
+     *            VarBinNode
+     * @param xbox
+     *            relevant Box
+     * @param level
+     *            current tree level
+     * @return
+     *         The relevant VarBinNode
+     */
+    private VarBinNode insertHelp(
+        Item item,
+        VarBinNode x,
+        Box xbox,
+        int level) {
 
-        if (x == VarFlyWeight.getInstance() )
-        {
+        if (x == VarFlyWeight.getInstance()) {
 
-            ((VarFlyWeight)x).turnLeaf(); //turn into leaf
+            ((VarFlyWeight)x).turnLeaf(); // turn into leaf
             ((VarLeafNode)x).insert(item, x);
             return x;
         }
-        if (x.isLeaf())
-        {
+        if (x.isLeaf()) {
             ((VarLeafNode)x).insert(item, x);
         }
-        else
-        {
+        else {
             level++;
             Box[] cube = xbox.split(level % 3);
-            if (searchHelp(item, cube[0]))
-            {
+            if (searchHelp(item, cube[0])) {
                 insertHelp(item, ((VarIntlNode)x).getRight(), cube[0], level);
             }
-            else
-            {
+            else {
                 insertHelp(item, ((VarIntlNode)x).getLeft(), cube[1], level);
             }
 
@@ -61,19 +77,22 @@ public class BinTree
     }
 
 
-    private boolean searchHelp(Item item, Box b)
-    {
-        if (item.getAirObj().getXorig() <= b.getxMax()
-            && item.getAirObj().getXorig() >= b.getxMin()
-            && item.getAirObj().getYorig() <= b.getyMax()
-            && item.getAirObj().getYorig() >= b.getyMin()
-            && item.getAirObj().getZorig() <= b.getzMax()
-            && item.getAirObj().getZorig() >= b.getzMin())
-
-        {
-            return true;
-        }
-        return false;
+    /**
+     * Assists searching for items in the BinTree
+     * 
+     * @param item
+     *            The item being searched for
+     * @param b
+     *            The box containing the item
+     * @return
+     *         If the item was found in the given box
+     */
+    private boolean searchHelp(Item item, Box b) {
+        return (item.getAirObj().getXorig() <= b.getxMax() && item.getAirObj()
+            .getXorig() >= b.getxMin() && item.getAirObj().getYorig() <= b
+                .getyMax() && item.getAirObj().getYorig() >= b.getyMin() && item
+                    .getAirObj().getZorig() <= b.getzMax() && item.getAirObj()
+                        .getZorig() >= b.getzMin());
     }
 
 
@@ -83,8 +102,7 @@ public class BinTree
      *
      * @return The value of root for this object.
      */
-    public VarBinNode getRoot()
-    {
+    public VarBinNode getRoot() {
         return root;
     }
 
@@ -96,11 +114,8 @@ public class BinTree
      * @param root
      *            The new value for root.
      */
-    public void setRoot(VarBinNode root)
-    {
+    public void setRoot(VarBinNode root) {
         this.root = root;
     }
-
-
 
 }

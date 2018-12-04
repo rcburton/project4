@@ -1,5 +1,12 @@
 import student.TestCase;
 
+/**
+ * Test class for the Box class
+ * 
+ * @author Ryan
+ * @version 2018-12-03
+ *
+ */
 public class BoxTest extends TestCase {
     /**
      * Sets up the tests that follow. In general, used for initialization
@@ -22,9 +29,9 @@ public class BoxTest extends TestCase {
      */
     public void testSplit() {
         Box b = new Box(1024, 0, 1024, 0, 1024, 0);
-        Box[] bA1 = b.split(0);
-        Box[] bA2 = b.split(1);
-        Box[] bA3 = b.split(2);
+        Box[] bA1 = b.split(1);
+        Box[] bA2 = b.split(2);
+        Box[] bA3 = b.split(3);
         
         assertEquals(bA1[0].getxMax(), 1024);
         assertEquals(bA1[0].getxMin(), 512);
